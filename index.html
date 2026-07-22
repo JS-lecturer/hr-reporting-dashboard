@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parumleo Orient — HR Reporting Dashboard</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-left">
+    <h1>Parumleo Orient <span class="subtitle">HR Reporting &amp; Agent Dashboard</span></h1>
+  </div>
+  <div class="header-right">
+    <span id="global-active-summary" class="global-active-summary"></span>
+    <button id="refresh-btn">↻ Refresh</button>
+  </div>
+</header>
+
+<div id="update-banner" class="banner banner-info">
+  Updated data is available — <button id="banner-refresh-link" onclick="UI.manualRefresh()">refresh to view</button>.
+</div>
+<div id="load-error-banner" class="banner banner-error">
+  <span id="load-error-text"></span>
+  <button id="dismiss-load-error">Dismiss</button>
+</div>
+
+<nav class="tabs">
+  <button class="tab-btn active" data-tab="exec">Executive Summary</button>
+  <button class="tab-btn" data-tab="workforce">Workforce</button>
+  <button class="tab-btn" data-tab="attrition">Attrition</button>
+  <button class="tab-btn" data-tab="compensation">Compensation &amp; Risk</button>
+  <button class="tab-btn" data-tab="tables">Tables</button>
+  <button class="tab-btn" data-tab="agent">Agent</button>
+  <button class="tab-btn" data-tab="chat">Chat</button>
+  <button class="tab-btn" data-tab="settings">Settings</button>
+</nav>
+
+<main>
+  <section id="panel-exec" class="tab-panel active"></section>
+  <section id="panel-workforce" class="tab-panel"></section>
+  <section id="panel-attrition" class="tab-panel"></section>
+  <section id="panel-compensation" class="tab-panel"></section>
+  <section id="panel-tables" class="tab-panel"></section>
+  <section id="panel-agent" class="tab-panel"></section>
+  <section id="panel-chat" class="tab-panel"></section>
+  <section id="panel-settings" class="tab-panel"></section>
+</main>
+
+<footer class="app-footer">
+  Static site — runs only while this tab is open. No backend, no database. Data resets if browser storage is cleared. See README.
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/queryEngine.js"></script>
+<script src="js/layer1Answer.js"></script>
+<script src="js/ruleEngine.js"></script>
+<script src="js/email.js"></script>
+<script src="js/layer2.js"></script>
+<script src="js/agent.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
